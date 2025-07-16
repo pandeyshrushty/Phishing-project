@@ -34,6 +34,13 @@ y_pred = model.predict(X_test_vec)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.2f}")
 
+output
+
+Dataset Loaded: (1000, 2)
+Accuracy: 0.94
+Prediction: Phishing
+
+
 # Test sample
 sample = ["Your account has been suspended. Click here to verify."]
 sample_vec = vectorizer.transform(sample)
