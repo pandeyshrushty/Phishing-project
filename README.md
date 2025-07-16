@@ -29,6 +29,90 @@ X_test_vec = vectorizer.transform(X_test)
 model = LogisticRegression()
 model.fit(X_train_vec, y_train)
 
+kali linux
+
+Thanks! You're seeing this message because **Kali Linux (with Python 3.13)** uses a **system protection (PEP 668)** to avoid breaking core Python packages. This prevents unsafe installations using `pip3` in the system environment.
+
+But don't worry — the solution is simple and safe.
+
+---
+
+## ✅ Recommended Fix: Use `--break-system-packages` (Safe for This Case)
+
+You're only installing `scikit-learn`, which is safe.
+
+### Run this:
+
+```bash
+pip3 install scikit-learn --break-system-packages
+```
+
+This will force the install **without damaging your system**, because `scikit-learn` is a user-level package, not a system one.
+
+---
+
+## ⚠️ Alternative (Optional but Safer): Use `venv`
+
+If you prefer **not to override system packages**, use a **Python virtual environment**:
+
+### Step 1: Install venv if missing
+
+```bash
+sudo apt install python3-venv
+```
+
+### Step 2: Create virtual environment
+
+```bash
+python3 -m venv phishing-env
+source phishing-env/bin/activate
+```
+
+You’ll now see something like this:
+
+```bash
+(phishing-env) networksrworld@kali:~/phishing_detector$
+```
+
+### Step 3: Install packages inside the venv
+
+```bash
+pip install scikit-learn pandas
+```
+
+### Step 4: Run your script
+
+```bash
+python phishing_detection_model.py
+```
+
+To exit the virtual environment later, just type:
+
+```bash
+deactivate
+```
+
+---
+
+## ✅ TL;DR
+
+### 💡 Quickest fix:
+
+```bash
+pip3 install scikit-learn --break-system-packages
+```
+
+Then run:
+
+```bash
+python3 phishing_detection_model.py
+```
+
+---
+
+Let me know if you want help setting up the venv or want a safer long-term setup for Kali!
+
+
 # Evaluate
 y_pred = model.predict(X_test_vec)
 accuracy = accuracy_score(y_test, y_pred)
