@@ -40,6 +40,26 @@ Dataset Loaded: (1000, 2)
 Accuracy: 0.94
 Prediction: Phishing
 
++--------------------------+
+| Email Input              |
++--------------------------+
+          |
+          v
++--------------------------+
+| Text Vectorization (TF-IDF) |
++--------------------------+
+          |
+          v
++--------------------------+
+| Logistic Regression Model |
++--------------------------+
+          |
+          v
++--------------------------+
+| Output: Phishing or Not   |
++--------------------------+
+
+
 
 # Test sample
 sample = ["Your account has been suspended. Click here to verify."]
